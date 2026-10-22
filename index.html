@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <meta id="metaThemeColor" name="theme-color" content="#fafaf9" />
+  <title>Загородный комплекс «Сосновка» — Отдых на берегу пруда в Пензенской области</title>
+  <meta name="description" content="Загородный комплекс «Сосновка» (sosnovka58.ru) в Кузнецком районе Пензенской области. Уютные домики из сруба, бунгало, беседки на воде, баня, сауна с бассейном и песчаный пляж." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            pine: {
+              50: '#f2f7f4',
+              100: '#e1ede6',
+              600: '#276749',
+              700: '#1e4e38',
+              800: '#163a2a',
+              900: '#0f291e',
+            },
+            wood: {
+              100: '#f5ebe0',
+              500: '#b07d4f',
+              600: '#936238',
+            }
+          }
+        }
+      }
+    };
+
+    // Immediate Theme Detection (Android, iOS, Windows, macOS) + Saved User Preference
+    (function initSystemAndUserTheme() {
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem('sosnovka_theme');
+      } catch (e) {}
+
+      const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+
+      if (useDark) {
+        document.documentElement.classList.add('dark');
+        const meta = document.getElementById('metaThemeColor');
+        if (meta) meta.setAttribute('content', '#0c0a09');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="bg-stone-50 dark:bg-stone-950 text-stone-800 dark:text-stone-100 font-sans antialiased selection:bg-pine-700 selection:text-white transition-colors duration-300">
+
+  <!-- Sticky Navigation -->
+  <header class="fixed top-0 inset-x-0 z-40 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md border-b border-stone-200/80 dark:border-stone-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between gap-4">
+      <!-- Brand with Enlarged PNG Alpha Channel Logo -->
+      <a href="#" class="flex items-center gap-3.5 group shrink-0">
+        <img
+          src="logo.png"
+          alt="logo"
+          class="h-14 sm:h-16 md:h-[68px] w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="whitespace-nowrap">
+          <span class="block font-serif font-bold text-lg sm:text-xl tracking-tight text-stone-900 dark:text-white leading-none">СОСНОВКА</span>
+          <span class="block text-xs sm:text-[13px] text-stone-500 dark:text-stone-400 mt-1 leading-none">Загородный комплекс</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium text-stone-600 dark:text-stone-300 whitespace-nowrap">
+        <a href="#about" class="hover:text-pine-700 dark:hover:text-emerald-400 transition">О комплексе</a>
+        <a href="#rooms" class="hover:text-pine-700 dark:hover:text-emerald-400 transition">Проживание</a>
+        <a href="#gazebos" class="hover:text-pine-700 dark:hover:text-emerald-400 transition">Беседки</a>
+        <a href="#services" class="hover:text-pine-700 dark:hover:text-emerald-400 transition">Баня и услуги</a>
+        <a href="#contacts" class="hover:text-pine-700 dark:hover:text-emerald-400 transition">Контакты</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <!-- Wider, Horizontally Centered iOS-Style Theme Switch -->
+        <button
+          id="themeToggle"
+          type="button"
+          onclick="toggleTheme()"
+          role="switch"
+          aria-checked="false"
+          aria-label="Theme Switch"
+          class="relative inline-grid grid-cols-2 items-center w-[72px] h-9 rounded-full bg-stone-200/90 dark:bg-stone-800 ring-1 ring-inset ring-stone-300/90 dark:ring-stone-700 transition-colors duration-300 focus:outline-none cursor-pointer shrink-0 shadow-inner mr-3 sm:mr-5 lg:mr-6"
+        >
+          <!-- Sliding iOS Knob (Mathematically Centered in Each 36x36 Half) -->
+          <span
+            id="themeKnob"
+            class="absolute top-1 left-1 w-7 h-7 rounded-full bg-white dark:bg-pine-700 shadow-md transform transition-transform duration-300 ease-in-out translate-x-0 dark:translate-x-9 pointer-events-none"
+          ></span>
+
+          <!-- Left Cell (36x36): Schematic Sun -->
+          <span class="relative z-10 w-9 h-9 flex items-center justify-center text-amber-500 dark:text-stone-400 transition-colors duration-300 pointer-events-none">
+            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path stroke-linecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"></path>
+            </svg>
+          </span>
+
+          <!-- Right Cell (36x36): Schematic Half-Moon -->
+          <span class="relative z-10 w-9 h-9 flex items-center justify-center text-stone-500 dark:text-emerald-300 transition-colors duration-300 pointer-events-none">
+            <svg class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <a href="tel:+79063964444" class="hidden xl:inline-flex items-center gap-2 text-sm font-semibold text-stone-800 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400 transition whitespace-nowrap">
+          <svg class="w-4 h-4 text-pine-700 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +7 (906) 396-44-44
+        </a>
+
+        <!-- Direct Phone Call Action -->
+        <a href="tel:+79063964444" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2.5 rounded-xl bg-pine-800 hover:bg-pine-700 text-white text-xs sm:text-sm font-semibold shadow-sm transition whitespace-nowrap">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>Забронировать</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800" aria-label="Menu">
+          <svg id="menuIconOpen" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg id="menuIconClose" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-stone-900 border-b border-stone-200 dark:border-stone-800 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-stone-700 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400">О комплексе</a>
+      <a href="#rooms" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-stone-700 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400">Проживание</a>
+      <a href="#gazebos" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-stone-700 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400">Беседки</a>
+      <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-stone-700 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400">Баня и услуги</a>
+      <a href="#contacts" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-stone-700 dark:text-stone-200 hover:text-pine-700 dark:hover:text-emerald-400">Контакты</a>
+      <div class="pt-2 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+        <span class="text-xs text-stone-500 dark:text-stone-400">Круглосуточно:</span>
+        <a href="tel:+79063964444" class="text-sm font-bold text-pine-800 dark:text-emerald-400 whitespace-nowrap">+7 (906) 396-44-44</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden bg-pine-900 text-white">
+    <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-pine-900 via-pine-900/70 to-pine-900/40"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-medium text-emerald-200 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span>Пензенская область • 10 км от Кузнецка • Круглый год</span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-6">
+          Уютный отдых в срубовых домах на берегу чистого пруда
+        </h1>
+        <p class="text-base sm:text-xl text-stone-200 leading-relaxed mb-8 max-w-2xl">
+          Загородный комплекс «Сосновка» — это песчаный пляж, деревянные коттеджи и бунгало с террасами, беседки на воде, русская баня, сауна с бассейном и домашнее кафе «У пруда».
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="#rooms" class="text-center px-6 py-3.5 rounded-xl bg-white text-pine-900 font-semibold text-sm hover:bg-stone-100 transition shadow-lg">
+            Выбрать домик или номер
+          </a>
+          <a href="#gazebos" class="text-center px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-semibold text-sm transition">
+            Аренда беседок у воды
+          </a>
+        </div>
+      </div>
+
+      <!-- Key Metrics Bar -->
+      <div class="mt-12 sm:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/15">
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-white">до 120</div>
+          <div class="text-xs sm:text-sm text-stone-300 mt-1">гостей одновременно</div>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-white">от 3 500 ₽</div>
+          <div class="text-xs sm:text-sm text-stone-300 mt-1">проживание в сутки</div>
+        </div>
+        <div>
+          <a
+            href="https://yandex.ru/maps/org/sosnovka/70653141413/reviews/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-block focus:outline-none"
+          >
+            <div class="text-2xl sm:text-3xl font-bold text-white group-hover:text-emerald-300 transition flex items-center gap-1.5">
+              <span>4.8 ★/5</span>
+              <svg class="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </div>
+            <div class="text-xs sm:text-sm text-stone-300 group-hover:text-white underline decoration-white/30 group-hover:decoration-emerald-300 underline-offset-4 mt-1 transition">более 600 отзывов гостей на Яндекс Картах</div>
+          </a>
+        </div>
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-white">24/7</div>
+          <div class="text-xs sm:text-sm text-stone-300 mt-1">круглогодичный прием</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Highlights -->
+  <section id="about" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+      <span class="text-xs font-bold uppercase tracking-widest text-pine-700 dark:text-emerald-400">Преимущества комплекса</span>
+      <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900 dark:text-white mt-2">Всё для семейного отдыха и праздников</h2>
+      <p class="text-stone-600 dark:text-stone-400 mt-3 text-sm sm:text-base leading-relaxed">
+        Деревянные дома из натурального сруба у теплого водоема создают атмосферу единения с природой, а развитая инфраструктура делает отдых беззаботным.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200/80 dark:border-stone-800 shadow-sm hover:shadow-md transition flex flex-col">
+        <div class="w-11 h-11 rounded-xl bg-pine-50 dark:bg-pine-900/60 text-pine-700 dark:text-emerald-400 flex items-center justify-center mb-4 font-bold text-lg">01</div>
+        <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Чистый пруд и пляж</h3>
+        <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">Большой оборудованный песчаный пляж, дежурство спасателей, рыбалка, прокат катамаранов и весельных лодок.</p>
+      </div>
+
+      <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200/80 dark:border-stone-800 shadow-sm hover:shadow-md transition flex flex-col">
+        <div class="w-11 h-11 rounded-xl bg-pine-50 dark:bg-pine-900/60 text-pine-700 dark:text-emerald-400 flex items-center justify-center mb-4 font-bold text-lg">02</div>
+        <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Комфорт в каждом номере</h3>
+        <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">Все номера и домики имеют собственные террасы, холодильник, электрочайник, телевизор, посуду и санузел с душем.</p>
+      </div>
+
+      <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200/80 dark:border-stone-800 shadow-sm hover:shadow-md transition flex flex-col">
+        <div class="w-11 h-11 rounded-xl bg-pine-50 dark:bg-pine-900/60 text-pine-700 dark:text-emerald-400 flex items-center justify-center mb-4 font-bold text-lg">03</div>
+        <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Кафе «У пруда»</h3>
+        <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">Домашняя кухня, специальное детское меню, зал на 30 мест, банкетный зал на 60 гостей и доставка блюд прямо в номер.</p>
+      </div>
+
+      <div class="bg-white dark:bg-stone-900 p-6 rounded-2xl border border-stone-200/80 dark:border-stone-800 shadow-sm hover:shadow-md transition flex flex-col">
+        <div class="w-11 h-11 rounded-xl bg-pine-50 dark:bg-pine-900/60 text-pine-700 dark:text-emerald-400 flex items-center justify-center mb-4 font-bold text-lg">04</div>
+        <h3 class="font-bold text-lg text-stone-900 dark:text-white mb-2">Отдых зимой и летом</h3>
+        <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">Летом — волейбол, бадминтон, настольный теннис и детский городок. Зимой — большие горки, ватрушки, лыжи и коньки.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accommodations Section -->
+  <section id="rooms" class="py-16 sm:py-20 bg-stone-100/80 dark:bg-stone-900/50 border-y border-stone-200/80 dark:border-stone-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-pine-700 dark:text-emerald-400">Прейскурант • Номера</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900 dark:text-white mt-2">Домики, бунгало и номера</h2>
+        </div>
+        <p class="text-sm text-stone-600 dark:text-stone-400 max-w-md leading-relaxed">
+          В стоимость включено проживание в номере и пользование инфраструктурой пляжа и детских площадок.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Room 1: Корпус №2 -->
+        <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">2 человека</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-stone-900 dark:text-white">Корпус №2</h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Однокомнатный номер эконом-класса</p>
+              <ul class="mt-4 space-y-2 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                <li>• Душ и туалет в номере</li>
+                <li>• Холодильник и электрочайник</li>
+                <li>• Собственная терраса и набор посуды</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-xs text-stone-500 dark:text-stone-400 block">За номер в сутки</span>
+              <span class="font-bold text-base sm:text-lg text-pine-800 dark:text-emerald-400 whitespace-nowrap">3 500 ₽ / сут.</span>
+            </div>
+            <a href="tel:+79063964444" class="px-4 py-2 rounded-xl bg-pine-50 dark:bg-pine-900/60 hover:bg-pine-100 dark:hover:bg-pine-800 text-pine-800 dark:text-emerald-300 font-semibold text-xs transition shrink-0">
+              Позвонить
+            </a>
+          </div>
+        </div>
+
+        <!-- Room 2: Бунгало -->
+        <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-pine-800 text-white text-xs font-medium">4 человека</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-stone-900 dark:text-white">Бунгало</h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Отдельный домик у воды • Все удобства</p>
+              <ul class="mt-4 space-y-2 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                <li>• Все бытовые удобства в домике</li>
+                <li>• Отдельный вход и терраса у пруда</li>
+                <li>• Санузел с душем, холодильник, СВЧ, чайник</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-xs text-stone-500 dark:text-stone-400 block">За номер в сутки</span>
+              <span class="font-bold text-base sm:text-lg text-pine-800 dark:text-emerald-400 whitespace-nowrap">6 500 ₽ / сут.</span>
+            </div>
+            <a href="tel:+79063964444" class="px-4 py-2 rounded-xl bg-pine-50 dark:bg-pine-900/60 hover:bg-pine-100 dark:hover:bg-pine-800 text-pine-800 dark:text-emerald-300 font-semibold text-xs transition shrink-0">
+              Позвонить
+            </a>
+          </div>
+        </div>
+
+        <!-- Room 3: Корпус №1 -->
+        <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">6 человек</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-stone-900 dark:text-white">Корпус №1</h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Трехкомнатный номер • Все удобства</p>
+              <ul class="mt-4 space-y-2 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                <li>• Просторный трехкомнатный номер из сруба</li>
+                <li>• Все бытовые удобства, санузел с душем</li>
+                <li>• Собственная терраса, бытовая техника, посуда</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-xs text-stone-500 dark:text-stone-400 block">За номер в сутки</span>
+              <span class="font-bold text-base sm:text-lg text-pine-800 dark:text-emerald-400 whitespace-nowrap">8 500 ₽ / сут.</span>
+            </div>
+            <a href="tel:+79063964444" class="px-4 py-2 rounded-xl bg-pine-50 dark:bg-pine-900/60 hover:bg-pine-100 dark:hover:bg-pine-800 text-pine-800 dark:text-emerald-300 font-semibold text-xs transition shrink-0">
+              Позвонить
+            </a>
+          </div>
+        </div>
+
+        <!-- Room 4: Коттедж -->
+        <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80');">
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-wood-600 text-white text-xs font-medium">8 человек</span>
+            </div>
+            <div class="p-6">
+              <h3 class="font-bold text-lg text-stone-900 dark:text-white">Коттедж</h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Большой бревенчатый дом • Все удобства</p>
+              <ul class="mt-4 space-y-2 text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                <li>• Все бытовые удобства, несколько спален</li>
+                <li>• Просторная гостиная, терраса, мангальная зона</li>
+                <li>• Идеально для большой семьи или компании</li>
+              </ul>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-stone-100 dark:border-stone-800 flex items-center justify-between gap-2">
+            <div>
+              <span class="text-xs text-stone-500 dark:text-stone-400 block">За дом в сутки</span>
+              <span class="font-bold text-base sm:text-lg text-pine-800 dark:text-emerald-400 whitespace-nowrap">11 000 ₽ / сут.</span>
+            </div>
+            <a href="tel:+79063964444" class="px-4 py-2 rounded-xl bg-pine-50 dark:bg-pine-900/60 hover:bg-pine-100 dark:hover:bg-pine-800 text-pine-800 dark:text-emerald-300 font-semibold text-xs transition shrink-0">
+              Позвонить
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day Guests in Rooms & Cottages Bar -->
+      <div class="mt-6 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200/90 dark:border-stone-800 shadow-sm overflow-hidden">
+        <div class="px-6 py-3.5 bg-pine-50/70 dark:bg-pine-900/40 border-b border-stone-200/80 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-pine-800 dark:text-emerald-400">Дневное пребывание гостей у проживающих (до 23:00)</span>
+        </div>
+        <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-200/70 dark:divide-stone-800">
+          <div class="p-5 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Гости в номера корпусов №1 и №2, а также бунгало</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Стоимость с человека • Пребывание до 23:00</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-base">700 ₽ / чел.</span>
+            </div>
+          </div>
+
+          <div class="p-5 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Гости в коттедж</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Стоимость с человека • Пребывание до 23:00</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-base">1 000 ₽ / чел.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gazebos & Day Rest Section -->
+  <section id="gazebos" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-pine-700 dark:text-emerald-400">Прейскурант • Беседки и дневной отдых</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900 dark:text-white mt-2">Аренда беседок с мангалом</h2>
+          <p class="text-stone-600 dark:text-stone-400 mt-4 text-sm sm:text-base leading-relaxed">
+            Проведите день на природе у воды. Все беседки оборудованы мангальной зоной и расположены на берегу пруда, у песчаного пляжа или непосредственно над водой.
+          </p>
+        </div>
+
+        <!-- Territory Entry & Parking Card -->
+        <div class="bg-white dark:bg-stone-900 rounded-2xl border border-stone-200/90 dark:border-stone-800 shadow-sm overflow-hidden">
+          <div class="px-5 py-3 bg-stone-100/80 dark:bg-stone-800/80 border-b border-stone-200/80 dark:border-stone-800">
+            <span class="text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300">Вход на территорию и парковка</span>
+          </div>
+          <div class="divide-y divide-stone-200/70 dark:divide-stone-800">
+            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Вход на территорию</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Дети до 7 лет включительно проходят бесплатно</div>
+              </div>
+              <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+                <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">250 ₽ / чел.</span>
+              </div>
+            </div>
+
+            <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Автостоянка</div>
+                <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Охраняемая парковка на территории комплекса</div>
+              </div>
+              <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+                <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">150 ₽ / сутки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-pine-50 dark:bg-pine-900/40 border border-pine-100 dark:border-pine-800">
+          <div class="font-semibold text-pine-900 dark:text-emerald-300 text-sm">Организация банкетов и корпоративов</div>
+          <p class="text-xs text-pine-800/80 dark:text-stone-300 mt-1 leading-relaxed">
+            Для свадеб, юбилеев и выпускных также доступен банкетный зал кафе «У пруда» до 60 посадочных мест с полным обслуживанием.
+          </p>
+        </div>
+      </div>
+
+      <!-- Gazebo Price List Table Card -->
+      <div class="lg:col-span-7 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200/90 dark:border-stone-800 shadow-sm overflow-hidden">
+        <div class="px-5 py-3.5 bg-pine-50/70 dark:bg-pine-900/40 border-b border-stone-200/80 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs font-bold uppercase tracking-wider text-pine-800 dark:text-emerald-400">Наименование беседки</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-pine-800 dark:text-emerald-400 hidden sm:inline">Стоимость</span>
+        </div>
+        <div class="divide-y divide-stone-200/70 dark:divide-stone-800">
+          <!-- Gazebo 1 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Деревянная беседка №1</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 60 человек • С мангалом</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с человека</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 2 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Деревянная беседка №2</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 25 человек • С мангалом</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с человека</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 3 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Деревянная беседка из бруса на пляже</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 10 человек • На песчаном пляже</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с чел. / не менее 5 чел.</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 4 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Металлическая беседка на пляже</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 10 человек • На песчаном пляже</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с чел. / не менее 5 чел.</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 5 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Беседка на воде</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 20 человек • Прямо над прудом</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с человека</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 6 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Беседка на воде малая</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 15 человек • Живописный вид на пруд</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с человека</span>
+            </div>
+          </div>
+
+          <!-- Gazebo 7 -->
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 hover:bg-stone-50 dark:hover:bg-stone-800/50 transition">
+            <div>
+              <div class="font-semibold text-stone-900 dark:text-white text-sm sm:text-base">Беседка металлическая</div>
+              <div class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">Вместимость: до 40 человек • С мангальной зоной</div>
+            </div>
+            <div class="sm:text-right sm:shrink-0 sm:whitespace-nowrap">
+              <span class="font-bold text-pine-800 dark:text-emerald-400 text-sm sm:text-base">500 ₽ с человека</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness & Services Section -->
+  <section id="services" class="py-16 sm:py-20 bg-pine-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-300">Досуг и релакс</span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold mt-2">Баня, сауна с бассейном и развлечения</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-300 mb-2">Парная и бассейн</div>
+            <h3 class="text-xl font-bold mb-3">Сауна и Русская баня</h3>
+            <p class="text-sm text-stone-200 leading-relaxed mb-5">
+              Финская сауна с освежающим бассейном и комнатой отдыха с караоке, а также традиционная русская баня на дровах. Базовая вместимость — 6 человек (возможны до 3 дополнительных гостей).
+            </p>
+          </div>
+          <div class="space-y-2.5 text-xs border-t border-white/15 pt-4 text-stone-200">
+            <div class="flex justify-between items-baseline gap-4">
+              <span>Сауна (до 6 чел.):</span>
+              <strong class="text-white text-right shrink-0">3 500 ₽ за 2 часа</strong>
+            </div>
+            <div class="flex justify-between items-baseline gap-4">
+              <span>Баня (до 6 чел.):</span>
+              <strong class="text-white text-right shrink-0">3 000 ₽ за 2 часа</strong>
+            </div>
+            <div class="flex justify-between items-baseline gap-4 text-emerald-200/90 pt-1">
+              <span>Доп. гости (до 3 чел.):</span>
+              <strong class="text-emerald-200 text-right shrink-0">+200 ₽ за каждого</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-300 mb-2">Активный отдых</div>
+            <h3 class="text-xl font-bold mb-3">Спорт, прокат и рыбалка</h3>
+            <p class="text-sm text-stone-200 leading-relaxed mb-5">
+              Прокат катамаранов и весельных лодок на пруду, отличная рыбалка, оборудованная волейбольная площадка, бадминтон и настольный теннис.
+            </p>
+          </div>
+          <div class="space-y-2.5 text-xs border-t border-white/15 pt-4 text-stone-200">
+            <div class="flex justify-between items-baseline gap-4">
+              <span class="shrink-0">Зимний сезон:</span>
+              <strong class="text-white text-right">Горки, ватрушки, лыжи, коньки</strong>
+            </div>
+            <div class="flex justify-between items-baseline gap-4">
+              <span class="shrink-0">Настольные игры:</span>
+              <strong class="text-white text-right">Шахматы, шашки, караоке</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-emerald-300 mb-2">Семейный отдых</div>
+            <h3 class="text-xl font-bold mb-3">Детский городок и кафе</h3>
+            <p class="text-sm text-stone-200 leading-relaxed mb-5">
+              Игровой комплекс с горкой, скалодромом, канатной лестницей, качелями, каруселями и сказочными избушками. В кафе доступно детское меню.
+            </p>
+          </div>
+          <div class="space-y-2.5 text-xs border-t border-white/15 pt-4 text-stone-200">
+            <div class="flex justify-between items-baseline gap-4">
+              <span class="shrink-0">Кафе «У пруда»:</span>
+              <strong class="text-white text-right">Зал, летняя веранда, доставка в номер</strong>
+            </div>
+            <div class="flex justify-between items-baseline gap-4">
+              <span class="shrink-0">Детям до 7 лет:</span>
+              <strong class="text-white text-right">Вход на территорию бесплатно</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacts, Yandex Map & Payment Requisites Section -->
+  <section id="contacts" class="py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-pine-700 dark:text-emerald-400">Как с нами связаться</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900 dark:text-white mt-2">Контакты и схема проезда</h2>
+        </div>
+
+        <div class="space-y-4 text-sm">
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800">
+            <div class="text-xs text-stone-500 dark:text-stone-400 mb-1">Адрес:</div>
+            <div class="font-semibold text-stone-900 dark:text-white leading-snug">Пензенская область, Кузнецкий район, с. Сосновка, ул. Полевая, 2</div>
+            <div class="text-xs text-stone-500 dark:text-stone-400 mt-1">GPS: 52.993513, 46.808531</div>
+          </div>
+
+          <!-- Unified Phone Numbers Styling -->
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800">
+            <div class="text-xs text-stone-500 dark:text-stone-400 mb-1">Телефоны бронирования (круглосуточно):</div>
+            <div class="space-y-1 font-semibold text-pine-800 dark:text-emerald-400 text-base">
+              <div><a href="tel:+79063964444" class="hover:underline">+7 (906) 396-44-44</a></div>
+              <div><a href="tel:+79674423333" class="hover:underline">+7 (967) 442-33-33</a></div>
+              <div><a href="tel:+78415751744" class="hover:underline">8 (84157) 51-7-44</a></div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800">
+            <div class="text-xs text-stone-500 dark:text-stone-400 mb-1">Email:</div>
+            <div class="font-semibold text-stone-900 dark:text-white break-words">
+              <a href="mailto:ira.sosnovka@mail.ru" class="hover:text-pine-700 dark:hover:text-emerald-400">ira.sosnovka@mail.ru</a>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-stone-100 dark:bg-stone-900/70 border border-transparent dark:border-stone-800 text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+            <strong class="text-stone-900 dark:text-white block mb-1">Как добраться на автомобиле:</strong>
+            <span>Проехать около 7 км от г. Кузнецка до с. Комаровка. Перед въездом в с. Комаровка повернуть налево по указателю в сторону с. Сосновка и проехать по асфальтированной дороге ~3 км. При въезде в село повернуть налево к загородному комплексу.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Yandex Map & Route Controls -->
+      <div class="lg:col-span-7 flex flex-col">
+        <div class="rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-sm bg-white dark:bg-stone-900 flex flex-col h-full">
+          <!-- Interactive Map Action Bar -->
+          <div class="p-3.5 sm:p-4 bg-stone-50 dark:bg-stone-800/60 border-b border-stone-200 dark:border-stone-800 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-500 shrink-0"></span>
+              <span class="text-xs sm:text-sm font-semibold text-stone-800 dark:text-stone-200">Яндекс Карты • с. Сосновка, ул. Полевая, 2</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+              <!-- Build Route Button -->
+              <a
+                href="https://yandex.ru/maps/?rtext=~52.993513,46.808531&rtt=auto"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-pine-800 hover:bg-pine-700 text-white text-xs font-semibold shadow-sm transition"
+              >
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                <span>Построить маршрут</span>
+              </a>
+
+              <!-- Open in Yandex Maps -->
+              <a
+                href="https://yandex.ru/maps/?pt=46.808531,52.993513&z=15&l=map"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-stone-700 text-xs font-semibold transition"
+              >
+                <span>Открыть в Яндекс Картах</span>
+              </a>
+
+              <!-- Copy GPS Coordinates -->
+              <button
+                type="button"
+                onclick="copyCoordinates()"
+                id="copyGpsBtn"
+                class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-stone-700 text-xs font-semibold transition"
+              >
+                <span id="copyGpsText">Скопировать GPS</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Yandex Maps Widget Iframe -->
+          <div class="relative flex-1 min-h-[340px] sm:min-h-[420px]">
+            <iframe
+              title="map"
+              src="https://yandex.ru/map-widget/v1/?ll=46.808531%2C52.993513&z=14&pt=46.808531,52.993513,pm2rdm"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              allowfullscreen="true"
+              class="w-full h-full min-h-[340px] sm:min-h-[420px]"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Requisites for Non-Cash Payments & Booking -->
+    <div class="mt-10 bg-white dark:bg-stone-900 rounded-2xl border border-stone-200/90 dark:border-stone-800 shadow-sm overflow-hidden">
+      <div class="px-6 py-4 bg-pine-50/70 dark:bg-pine-900/40 border-b border-stone-200/80 dark:border-stone-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <svg class="w-5 h-5 text-pine-800 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+          </svg>
+          <h3 class="text-xs sm:text-sm font-bold uppercase tracking-wider text-pine-900 dark:text-emerald-300">
+            Реквизиты для безналичных платежей
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="copyRequisites()"
+          class="self-start sm:self-auto inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-stone-700 text-xs font-semibold transition shadow-sm"
+        >
+          <svg class="w-3.5 h-3.5 text-pine-700 dark:text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span id="copyReqText">Скопировать реквизиты</span>
+        </button>
+      </div>
+
+      <div class="p-6 grid lg:grid-cols-12 gap-6 items-center">
+        <!-- Bank Details Grid -->
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 text-sm">
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">Получатель:</div>
+            <div class="font-semibold text-stone-900 dark:text-white mt-0.5">ООО "Сосновка"</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">Банк получателя:</div>
+            <div class="font-semibold text-stone-900 dark:text-white mt-0.5">Курское отделение №8596 ПАО СБЕРБАНК</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">ИНН / КПП:</div>
+            <div class="font-semibold text-stone-900 dark:text-white mt-0.5 font-mono">5803021085 / 580301001</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">БИК:</div>
+            <div class="font-semibold text-stone-900 dark:text-white mt-0.5 font-mono">043807606</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">Кор/счет:</div>
+            <div class="font-semibold text-stone-900 dark:text-white mt-0.5 font-mono break-all">30101810000000000606</div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700/80">
+            <div class="text-xs text-stone-500 dark:text-stone-400">Расчетный счет:</div>
+            <div class="font-semibold text-pine-800 dark:text-emerald-400 mt-0.5 font-mono break-all">40702810448100001103</div>
+          </div>
+        </div>
+
+        <!-- Payment Purpose & Example Box -->
+        <div class="lg:col-span-5 p-5 rounded-2xl bg-pine-50/80 dark:bg-pine-900/30 border border-pine-100 dark:border-pine-800 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-pine-800 dark:text-emerald-400 mb-1.5">
+              Назначение платежа
+            </div>
+            <p class="text-xs sm:text-sm text-stone-700 dark:text-stone-300 leading-relaxed">
+              В назначении платежа указывать забронированный номер, дату брони, ФИО, на кого сделана бронь.
+            </p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-white dark:bg-stone-800 border border-pine-200/80 dark:border-stone-700 shadow-sm">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-stone-400 mb-1">
+              Пример:
+            </div>
+            <div class="text-xs sm:text-sm font-semibold text-pine-900 dark:text-emerald-300 leading-snug">
+              Оплата за бронь Бунгало №1 на 23.10.2027г. Иванов В.И.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer on Grey Background -->
+  <footer class="bg-stone-800 dark:bg-stone-900 text-stone-200 py-8 border-t border-stone-700 dark:border-stone-800 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-medium text-white text-center md:text-left">
+        Реестровая запись № С582024017520 от 23.07.2025г.
+      </div>
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs text-stone-300">
+        <button type="button" onclick="openLegalModal('privacy')" class="hover:text-white underline underline-offset-4 transition">
+          Политика обработки персональных данных
+        </button>
+        <button type="button" onclick="openLegalModal('terms')" class="hover:text-white underline underline-offset-4 transition">
+          Пользовательское соглашение
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Round Back to Top Button -->
+  <button
+    id="backToTopBtn"
+    type="button"
+    onclick="scrollToTop()"
+    aria-label="Top"
+    class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-pine-800/35 hover:bg-pine-800/80 active:scale-95 text-white border border-white/40 shadow-sm flex items-center justify-center transition-all duration-300 ease-in-out opacity-0 pointer-events-none translate-y-2"
+  >
+    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- Cookie & Personal Data Consent Banner (Roskomnadzor 152-FZ Compliant) -->
+  <div id="cookieBanner" class="fixed bottom-4 inset-x-4 sm:left-auto sm:right-6 sm:max-w-xl z-50 hidden">
+    <div class="bg-stone-900/95 backdrop-blur-md text-stone-100 p-4 sm:p-5 rounded-2xl shadow-2xl border border-stone-700/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="text-xs leading-relaxed text-stone-300">
+        <span>
+          Оставаясь на сайте, вы соглашаетесь на сбор и обработку файлов cookie и пользовательских данных в соответствии с ФЗ № 152-ФЗ «О персональных данных», а также принимаете условия
+        </span>
+        <button type="button" onclick="openLegalModal('privacy')" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 font-medium">
+          Политики конфиденциальности
+        </button>
+        <span>и</span>
+        <button type="button" onclick="openLegalModal('terms')" class="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 font-medium">
+          Пользовательского соглашения
+        </button>.
+      </div>
+      <button
+        type="button"
+        onclick="acceptCookies()"
+        class="w-full sm:w-auto shrink-0 px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-wide uppercase shadow-sm transition"
+      >
+        ОК
+      </button>
+    </div>
+  </div>
+
+  <!-- Legal Modal (Privacy Policy & User Agreement according to 152-FZ) -->
+  <div id="legalModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-stone-950/70 backdrop-blur-sm p-4">
+    <div class="bg-white dark:bg-stone-900 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-stone-200 dark:border-stone-800 overflow-hidden">
+      <!-- Modal Header -->
+      <div class="px-6 py-4 bg-stone-50 dark:bg-stone-800/80 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between gap-2">
+        <div class="flex flex-wrap gap-2">
+          <button
+            type="button"
+            id="tabPrivacy"
+            onclick="switchLegalTab('privacy')"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-pine-800 text-white transition"
+          >
+            Политика обработки ПДн (152-ФЗ)
+          </button>
+          <button
+            type="button"
+            id="tabTerms"
+            onclick="switchLegalTab('terms')"
+            class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-stone-600 transition"
+          >
+            Пользовательское соглашение
+          </button>
+        </div>
+        <button
+          type="button"
+          onclick="closeLegalModal()"
+          class="w-8 h-8 shrink-0 rounded-lg text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-700 flex items-center justify-center text-sm font-bold"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Body -->
+      <div class="p-6 overflow-y-auto text-xs sm:text-sm text-stone-700 dark:text-stone-300 space-y-4 leading-relaxed">
+        <!-- Document 1: Privacy & Cookie Policy -->
+        <div id="contentPrivacy" class="space-y-3">
+          <h3 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white">
+            Политика в отношении обработки персональных данных и использования файлов Cookie
+          </h3>
+          <p class="text-xs text-stone-500 dark:text-stone-400">
+            Разработано в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» (с учетом актуальных требований Роскомнадзора).
+          </p>
+          <p>
+            <strong>1. Общие положения</strong><br>
+            Настоящая Политика определяет порядок обработки и защиты информации о физических лицах (Субъектах персональных данных), пользующихся сайтом загородного комплекса «Сосновка» (адрес объекта: Пензенская область, Кузнецкий район, с. Сосновка, ул. Полевая, 2; Реестровая запись № С582024017520 от 23.07.2025г., далее — Оператор).
+          </p>
+          <p>
+            <strong>2. Правовые основания и цели обработки данных</strong><br>
+            Обработка осуществляется на основании ст. 6 и ст. 9 Федерального закона № 152-ФЗ «О персональных данных» исключительно в целях:
+            <br>• консультирования и бронирования услуг проживания и отдыха по обращениям Пользователя;
+            <br>• обеспечения корректной работы сайта и картографических сервисов (Яндекс Карты);
+            <br>• сбора обезличенной статистической информации о посещаемости сайта.
+          </p>
+          <p>
+            <strong>3. Перечень обрабатываемых данных и файлов Cookie</strong><br>
+            При посещении сайта и обращении к Оператору могут обрабатываться:
+            <br>• технические данные, автоматически передаваемые устройством Пользователя: файлы cookie, IP-адрес, тип и версия браузера, тип устройства и разрешение экрана, источник перехода на сайт;
+            <br>• контактные данные (номер телефона, имя, адрес электронной почты), добровольно предоставляемые Пользователем при телефонном обращении или отправке электронного письма на адреса Оператора (<code>info@sosnovka58.ru</code>, <code>i.sosnovka@mail.ru</code>).
+            <br>Оператор не обрабатывает специальные категории персональных данных и биометрические данные.
+          </p>
+          <p>
+            <strong>4. Локализация баз данных и трансграничная передача</strong><br>
+            В соответствии с ч. 5 ст. 18 Федерального закона № 152-ФЗ запись, систематизация, накопление, хранение, уточнение и извлечение персональных данных граждан Российской Федерации осуществляются с использованием баз данных, находящихся исключительно на территории Российской Федерации. Трансграничная передача персональных данных третьим лицам на территории иностранных государств не осуществляется.
+          </p>
+          <p>
+            <strong>5. Использование файлов Cookie</strong><br>
+            Файлы cookie представляют собой небольшие фрагменты данных, сохраняемые в браузере Пользователя для запоминания настроек (например, выбранной темы оформления и факта согласия с уведомлением). Пользователь вправе в любой момент ограничить или отключить сохранение файлов cookie в настройках своего браузера.
+          </p>
+          <p>
+            <strong>6. Сроки хранения и порядок отзыва согласия</strong><br>
+            Персональные данные хранятся до достижения целей обработки либо до момента отзыва согласия Субъектом персональных данных. Субъект вправе направить запрос на уточнение, блокирование или уничтожение своих данных, а также отзыв согласия по электронной почте <code>info@sosnovka58.ru</code> или по адресу: Пензенская область, Кузнецкий район, с. Сосновка, ул. Полевая, 2. Обработка прекращается в течение 10 рабочих дней с момента получения обращения.
+          </p>
+        </div>
+
+        <!-- Document 2: User Agreement & Consent -->
+        <div id="contentTerms" class="space-y-3 hidden">
+          <h3 class="text-base sm:text-lg font-bold text-stone-900 dark:text-white">
+            Пользовательское соглашение и Согласие на обработку персональных данных
+          </h3>
+          <p>
+            <strong>1. Предмет Пользовательского соглашения</strong><br>
+            Оставаясь на сайте загородного комплекса «Сосновка» (sosnovka58.ru) и нажимая кнопку «ОК» во всплывающем уведомлении, Пользователь подтверждает свое совершеннолетие, дееспособность и полное согласие с настоящим Соглашением.
+          </p>
+          <p>
+            <strong>2. Согласие на обработку персональных данных и файлов Cookie</strong><br>
+            Действуя свободно, своей волей и в своем интересе, в соответствии со ст. 9 Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных», Пользователь дает согласие Оператору на автоматизированную обработку технических метаданных (файлы cookie, IP-адрес, сведения о действиях на сайте) и контактных данных при обращении к Оператору.
+          </p>
+          <p>
+            <strong>3. Информационный характер материалов сайта</strong><br>
+            Все сведения о стоимости проживания, аренды беседок, бани и дополнительных услуг, размещенные на сайте, носят информационный характер. Окончательное бронирование и подтверждение наличия свободных мест осуществляется круглосуточно по телефонам комплекса: <strong>+7 (906) 396-44-44</strong>, <strong>+7 (967) 442-33-33</strong>, <strong>8 (84157) 51-7-44</strong>.
+          </p>
+          <p>
+            <strong>4. Заключительные положения</strong><br>
+            В случае несогласия с условиями сбора файлов cookie Пользователь обязан отключить использование cookie в настройках своего интернет-браузера либо прекратить использование сайта.
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3.5 bg-stone-50 dark:bg-stone-800/80 border-t border-stone-200 dark:border-stone-800 flex items-center justify-end gap-3">
+        <button
+          type="button"
+          onclick="acceptCookies(); closeLegalModal();"
+          class="px-5 py-2 rounded-xl bg-pine-800 hover:bg-pine-700 text-white text-xs font-semibold transition"
+        >
+          Понятно, принять
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts for Theme Sync, Mobile Menu, Back to Top, Cookie Consent, Legal Modal & Clipboard Copy -->
+  <script>
+    // Sync Theme State with DOM, Mobile Browser Bar & Aria Attributes
+    function applyThemeState(isDark) {
+      const htmlEl = document.documentElement;
+      htmlEl.classList.toggle('dark', isDark);
+
+      const btn = document.getElementById('themeToggle');
+      if (btn) btn.setAttribute('aria-checked', isDark ? 'true' : 'false');
+
+      const meta = document.getElementById('metaThemeColor');
+      if (meta) meta.setAttribute('content', isDark ? '#0c0a09' : '#fafaf9');
+    }
+
+    // Manual User Toggle (Saves Preference in Browser Storage)
+    function toggleTheme() {
+      const isDark = !document.documentElement.classList.contains('dark');
+      applyThemeState(isDark);
+      try {
+        localStorage.setItem('sosnovka_theme', isDark ? 'dark' : 'light');
+      } catch (e) {}
+    }
+
+    // Listen for Live OS / Device Theme Changes (Android, iOS, Windows, macOS)
+    (function watchSystemTheme() {
+      if (!window.matchMedia) return;
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleSystemChange = (e) => {
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem('sosnovka_theme');
+        } catch (err) {}
+        // Automatically follow device theme if user hasn't locked a manual override
+        if (!savedTheme) {
+          applyThemeState(e.matches);
+        }
+      };
+
+      if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', handleSystemChange);
+      } else if (typeof mediaQuery.addListener === 'function') {
+        mediaQuery.addListener(handleSystemChange);
+      }
+    })();
+
+    // Back to Top Button Fade In / Fade Out & Scroll Logic
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (!backToTopBtn) return;
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
+        backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+        backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    }, { passive: true });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const iconOpen = document.getElementById('menuIconOpen');
+      const iconClose = document.getElementById('menuIconClose');
+      if (menu) menu.classList.toggle('hidden');
+      if (iconOpen) iconOpen.classList.toggle('hidden');
+      if (iconClose) iconClose.classList.toggle('hidden');
+    }
+
+    // Cookie Banner & Initial Aria Sync on DOMContentLoaded
+    window.addEventListener('DOMContentLoaded', () => {
+      let accepted = null;
+      try {
+        accepted = localStorage.getItem('sosnovka_cookie_consent_v1');
+      } catch (e) {}
+
+      const banner = document.getElementById('cookieBanner');
+      if (!accepted && banner) {
+        banner.classList.remove('hidden');
+      }
+
+      const isDark = document.documentElement.classList.contains('dark');
+      applyThemeState(isDark);
+    });
+
+    function acceptCookies() {
+      try {
+        localStorage.setItem('sosnovka_cookie_consent_v1', 'accepted');
+      } catch (e) {}
+      const banner = document.getElementById('cookieBanner');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    // Legal Modal Controls
+    function openLegalModal(tab) {
+      const modal = document.getElementById('legalModal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      switchLegalTab(tab || 'privacy');
+    }
+
+    function closeLegalModal() {
+      const modal = document.getElementById('legalModal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function switchLegalTab(tab) {
+      const contentPrivacy = document.getElementById('contentPrivacy');
+      const contentTerms = document.getElementById('contentTerms');
+      const tabPrivacy = document.getElementById('tabPrivacy');
+      const tabTerms = document.getElementById('tabTerms');
+      if (!contentPrivacy || !contentTerms || !tabPrivacy || !tabTerms) return;
+
+      if (tab === 'terms') {
+        contentPrivacy.classList.add('hidden');
+        contentTerms.classList.remove('hidden');
+        tabTerms.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-pine-800 text-white transition';
+        tabPrivacy.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-stone-600 transition';
+      } else {
+        contentTerms.classList.add('hidden');
+        contentPrivacy.classList.remove('hidden');
+        tabPrivacy.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-pine-800 text-white transition';
+        tabTerms.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-stone-200 dark:bg-stone-700 text-stone-700 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-stone-600 transition';
+      }
+    }
+
+    // Safe Clipboard Helper (Works on HTTPS and Local file:// Testing)
+    function copyTextToClipboard(text, onSuccess) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess));
+      } else {
+        fallbackCopy(text, onSuccess);
+      }
+    }
+
+    function fallbackCopy(text, onSuccess) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        if (onSuccess) onSuccess();
+      } catch (e) {}
+    }
+
+    // Copy GPS
+    function copyCoordinates() {
+      copyTextToClipboard('52.993513, 46.808531', () => {
+        const span = document.getElementById('copyGpsText');
+        if (!span) return;
+        span.textContent = 'Скопировано!';
+        setTimeout(() => {
+          span.textContent = 'Скопировать GPS';
+        }, 2000);
+      });
+    }
+
+    // Copy Bank Requisites
+    function copyRequisites() {
+      const reqText = `РЕКВИЗИТЫ ДЛЯ БЕЗНАЛИЧНЫХ ПЛАТЕЖЕЙ
+Банк получателя: Курское отделение №8596 ПАО СБЕРБАНК
+ИНН 5803021085 КПП 580301001
+БИК 043807606
+Кор/счет 30101810000000000606
+Расчетный счет 40702810448100001103
+Получатель: ООО "Сосновка"
+В назначении платежа указывать забронированный номер, дату брони, ФИО, на кого сделана бронь.
+ПРИМЕР: Оплата за бронь Бунгало №1 на 23.10.2027г. Иванов В.И.`;
+
+      copyTextToClipboard(reqText, () => {
+        const span = document.getElementById('copyReqText');
+        if (!span) return;
+        span.textContent = 'Скопировано!';
+        setTimeout(() => {
+          span.textContent = 'Скопировать реквизиты';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
