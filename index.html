@@ -8,20 +8,35 @@
   <title>Загородный комплекс «Сосновка» — Отдых на берегу чистого озера в Пензенской области</title>
   <meta name="description" content="Загородный комплекс «Сосновка» в Кузнецком районе Пензенской области. Уютные домики из сруба, бунгало, беседки на воде, баня, сауна с бассейном и песчаный пляж." />
   
+  <!-- Preload Critical Images -->
+  <link rel="preload" as="image" href="logo.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="background.jpg" fetchpriority="high" />
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-  <!-- Yandex Maps API -->
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-
-  <link rel="preload" as="image" href="background.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  </noscript>
 
   <style>
+    html {
+      background-color: #fafaf9;
+    }
+    html.dark {
+      background-color: #0c0a09;
+    }
+    .hidden {
+      display: none;
+    }
+    #backToTopBtn {
+      opacity: 0;
+      pointer-events: none;
+    }
     @keyframes siteReveal {
       0% {
         opacity: 0;
@@ -32,8 +47,22 @@
     }
     .site-fade-in {
       opacity: 0;
-      animation: siteReveal 2s cubic-bezier(0.5, 0, 0.15, 1) forwards;
       will-change: opacity;
+    }
+    html.site-ready .site-fade-in {
+      animation: siteReveal 2s cubic-bezier(0.5, 0, 0.15, 1) forwards;
+    }
+    html.site-revealed .site-fade-in {
+      opacity: 1;
+      animation: none;
+      will-change: auto;
+    }
+    .hero-bg-img {
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
     }
     .room-card-img {
       image-rendering: auto;
@@ -43,17 +72,13 @@
     }
     .hero-text-shadow {
       text-shadow:
-        0 1px 5px rgba(0, 0, 0, 0.85),
-        0 3px 14px rgba(0, 0, 0, 0.75),
-        0 5px 28px rgba(0, 0, 0, 0.55),
-        0 7px 44px rgba(0, 0, 0, 0.35);
+        0 2px 6px rgba(0, 0, 0, 0.9),
+        0 4px 20px rgba(0, 0, 0, 0.75);
     }
     .hero-title-shadow {
       text-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.92),
-        0 4px 18px rgba(0, 0, 0, 0.85),
-        0 6px 36px rgba(0, 0, 0, 0.7),
-        0 8px 56px rgba(0, 0, 0, 0.45);
+        0 2px 8px rgba(0, 0, 0, 0.95),
+        0 6px 26px rgba(0, 0, 0, 0.85);
     }
     @media (max-width: 1023px) {
       html, body {
@@ -122,6 +147,9 @@
           <img
             src="logo.png"
             alt="logo"
+            fetchpriority="high"
+            loading="eager"
+            decoding="sync"
             class="h-14 sm:h-20 md:h-[84px] w-auto object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
           />
           <div class="whitespace-nowrap">
@@ -214,10 +242,14 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-between pt-28 pb-10 sm:pt-36 sm:pb-12 md:pt-40 md:pb-14 overflow-hidden bg-pine-900 text-white">
-    <div
-      class="absolute inset-0 bg-cover bg-no-repeat"
-      style="background-image: url('background.jpg'); background-position: center 30%;"
-    ></div>
+    <img
+      src="background.jpg"
+      alt=""
+      fetchpriority="high"
+      loading="eager"
+      decoding="sync"
+      class="hero-bg-img absolute inset-0 w-full h-full object-cover object-[center_30%] pointer-events-none select-none"
+    />
     <div class="site-fade-in absolute inset-0 bg-gradient-to-t from-pine-900/[0.78] via-pine-900/[0.43] to-stone-950/[0.28]"></div>
 
     <div class="site-fade-in relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
@@ -349,7 +381,7 @@
         <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
           <div>
             <div class="h-44 relative overflow-hidden bg-stone-200 dark:bg-stone-800">
-              <img src="korpus2.jpg" onerror="this.onerror=null;this.src='1.jpg';" alt="Корпус №2" class="room-card-img w-full h-full object-cover" decoding="async" />
+              <img src="korpus2.jpg" onerror="this.onerror=null;this.src='1.jpg';" alt="Корпус №2" class="room-card-img w-full h-full object-cover" loading="lazy" decoding="async" />
               <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">2 человека</span>
             </div>
             <div class="p-5">
@@ -377,7 +409,7 @@
         <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
           <div>
             <div class="h-44 relative overflow-hidden bg-stone-200 dark:bg-stone-800">
-              <img src="bungalo.jpg" onerror="this.onerror=null;this.src='2.jpg';" alt="Бунгало" class="room-card-img w-full h-full object-cover" decoding="async" />
+              <img src="bungalo.jpg" onerror="this.onerror=null;this.src='2.jpg';" alt="Бунгало" class="room-card-img w-full h-full object-cover" loading="lazy" decoding="async" />
               <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">4 человека</span>
             </div>
             <div class="p-5">
@@ -405,7 +437,7 @@
         <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
           <div>
             <div class="h-44 relative overflow-hidden bg-stone-200 dark:bg-stone-800">
-              <img src="korpus1.jpg" onerror="this.onerror=null;this.src='3.jpg';" alt="Корпус №1" class="room-card-img w-full h-full object-cover" decoding="async" />
+              <img src="korpus1.jpg" onerror="this.onerror=null;this.src='3.jpg';" alt="Корпус №1" class="room-card-img w-full h-full object-cover" loading="lazy" decoding="async" />
               <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">6 человек</span>
             </div>
             <div class="p-5">
@@ -433,7 +465,7 @@
         <div class="bg-white dark:bg-stone-900 rounded-2xl overflow-hidden border border-stone-200/90 dark:border-stone-800 shadow-sm flex flex-col justify-between">
           <div>
             <div class="h-44 relative overflow-hidden bg-stone-200 dark:bg-stone-800">
-              <img src="cottage.jpg" onerror="this.onerror=null;this.src='4.jpg';" alt="Коттедж" class="room-card-img w-full h-full object-cover" decoding="async" />
+              <img src="cottage.jpg" onerror="this.onerror=null;this.src='4.jpg';" alt="Коттедж" class="room-card-img w-full h-full object-cover" loading="lazy" decoding="async" />
               <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-stone-900/80 text-white text-xs font-medium">8 человек</span>
             </div>
             <div class="p-5">
@@ -497,7 +529,7 @@
           <span class="text-xs font-bold uppercase tracking-widest text-pine-700 dark:text-emerald-400">Прейскурант, беседки и дневной отдых</span>
           <h2 class="font-serif text-2xl sm:text-4xl font-bold text-stone-900 dark:text-white mt-2">Аренда беседок с мангалом</h2>
           <p class="text-stone-600 dark:text-stone-400 mt-4 text-sm sm:text-base leading-relaxed">
-            Проведите день на природе у воды. Все беседки оборудованы мангальной зоной и расположены на берегу пруда, у песчаного пляжa или непосредственно над водой.
+            Проведите день на природе у воды. Все беседки оборудованы мангальной зоной и расположены на берегу пруда, у песчаного пляжа или непосредственно над водой.
           </p>
         </div>
 
@@ -646,7 +678,7 @@
       <!-- Mobile Services Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 items-stretch lg:hidden">
         <!-- Service Card 1 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Парная и бассейн</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3.5 text-white">Сауна и Русская баня</h3>
@@ -671,7 +703,7 @@
         </div>
 
         <!-- Service Card 2 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Активный отдых</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3.5 text-white">Спорт, прокат и рыбалка</h3>
@@ -692,7 +724,7 @@
         </div>
 
         <!-- Service Card 3 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Семейный отдых</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3.5 text-white">Детский городок</h3>
@@ -713,7 +745,7 @@
         </div>
 
         <!-- Service Card 4 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-6 sm:p-7 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2">Домашняя кухня</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-3.5 text-white">Кафе «У пруда» и банкеты</h3>
@@ -737,7 +769,7 @@
       <!-- Desktop Services Grid -->
       <div class="hidden lg:grid lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         <!-- Service Card 1 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2.5">Парная и бассейн</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-white">Сауна и Русская баня</h3>
@@ -762,7 +794,7 @@
         </div>
 
         <!-- Service Card 2 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2.5">Активный отдых</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-white">Спорт, прокат и рыбалка</h3>
@@ -783,7 +815,7 @@
         </div>
 
         <!-- Service Card 3 -->
-        <div class="bg-white/10 backdrop-blur-md rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
+        <div class="bg-white/10 rounded-2xl p-7 sm:p-9 border border-white/15 flex flex-col justify-between">
           <div>
             <div class="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400 mb-2.5">Семейный отдых</div>
             <h3 class="text-xl sm:text-2xl font-bold mb-4 text-white">Детский городок и кафе</h3>
@@ -1112,10 +1144,14 @@
 
   <!-- Application Scripts -->
   <script>
-    // Yandex Map Initialization
+    // Yandex Map Lazy Initialization
+    let yandexMapInitialized = false;
+
     function initYandexMap() {
+      if (yandexMapInitialized) return;
       const mapEl = document.getElementById('yandexMap');
       if (!mapEl) return;
+      yandexMapInitialized = true;
 
       // Map Center Coordinates
       const viewCenter = [52.992100, 46.806060];
@@ -1130,7 +1166,11 @@
         ></iframe>`;
       }
 
-      if (typeof window.ymaps !== 'undefined') {
+      function mountYandexMap() {
+        if (typeof window.ymaps === 'undefined') {
+          renderFallbackIframe();
+          return;
+        }
         ymaps.ready(function () {
           try {
             const map = new ymaps.Map(mapEl, {
@@ -1151,8 +1191,34 @@
             renderFallbackIframe();
           }
         });
+      }
+
+      if (typeof window.ymaps !== 'undefined') {
+        mountYandexMap();
       } else {
-        renderFallbackIframe();
+        const script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+        script.async = true;
+        script.onload = mountYandexMap;
+        script.onerror = renderFallbackIframe;
+        document.head.appendChild(script);
+      }
+    }
+
+    function observeMapSection() {
+      const contactsEl = document.getElementById('contacts');
+      if (!contactsEl) return;
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            observer.disconnect();
+            initYandexMap();
+          }
+        }, { rootMargin: '600px 0px' });
+        observer.observe(contactsEl);
+      } else {
+        setTimeout(initYandexMap, 2500);
       }
     }
 
@@ -1204,9 +1270,13 @@
     window.addEventListener('scroll', () => {
       if (!backToTopBtn) return;
       if (window.scrollY > 300) {
+        backToTopBtn.style.opacity = '1';
+        backToTopBtn.style.pointerEvents = 'auto';
         backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-2');
         backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
       } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.pointerEvents = 'none';
         backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
         backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
       }
@@ -1258,6 +1328,40 @@
       }
     }
 
+    // Site Reveal Trigger
+    function triggerSiteReveal() {
+      let revealed = false;
+      const runReveal = () => {
+        if (revealed) return;
+        revealed = true;
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            document.documentElement.classList.add('site-ready');
+            setTimeout(() => {
+              document.documentElement.classList.add('site-revealed');
+            }, 2050);
+          });
+        });
+      };
+
+      const heroImg = document.querySelector('.hero-bg-img');
+      const decodeAndReveal = () => {
+        if (heroImg && typeof heroImg.decode === 'function') {
+          heroImg.decode().then(runReveal).catch(runReveal);
+        } else {
+          runReveal();
+        }
+      };
+
+      if (heroImg && !heroImg.complete) {
+        heroImg.addEventListener('load', decodeAndReveal, { once: true });
+        heroImg.addEventListener('error', runReveal, { once: true });
+        setTimeout(runReveal, 1500);
+      } else {
+        decodeAndReveal();
+      }
+    }
+
     // Page Initialization on DOMContentLoaded
     window.addEventListener('DOMContentLoaded', () => {
       let accepted = null;
@@ -1272,7 +1376,8 @@
 
       const isDark = document.documentElement.classList.contains('dark');
       applyThemeState(isDark);
-      initYandexMap();
+      triggerSiteReveal();
+      observeMapSection();
     });
 
     function acceptCookies() {
