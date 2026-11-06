@@ -47,15 +47,9 @@
     }
     .site-fade-in {
       opacity: 0;
-      will-change: opacity;
     }
     html.site-ready .site-fade-in {
       animation: siteReveal 2s cubic-bezier(0.5, 0, 0.15, 1) forwards;
-    }
-    html.site-revealed .site-fade-in {
-      opacity: 1;
-      animation: none;
-      will-change: auto;
     }
     .hero-bg-img {
       image-rendering: auto;
@@ -252,10 +246,10 @@
     />
     <div class="site-fade-in absolute inset-0 bg-gradient-to-t from-pine-900/[0.78] via-pine-900/[0.43] to-stone-950/[0.28]"></div>
 
-    <div class="site-fade-in relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
       <!-- Location Badge -->
       <div class="mt-8">
-        <div class="inline-flex w-fit max-w-full items-center gap-2.5 sm:gap-[11px] px-4 sm:px-5 py-2 sm:py-[8.5px] rounded-[22px] sm:rounded-full bg-stone-950/50 backdrop-blur-md border border-white/20 text-[15px] sm:text-[17px] leading-snug font-medium text-emerald-200 shadow-sm">
+        <div class="site-fade-in inline-flex w-fit max-w-full items-center gap-2.5 sm:gap-[11px] px-4 sm:px-5 py-2 sm:py-[8.5px] rounded-[22px] sm:rounded-full bg-stone-950/50 backdrop-blur-md border border-white/20 text-[15px] sm:text-[17px] leading-snug font-medium text-emerald-200 shadow-sm">
           <span class="w-2.5 h-2.5 sm:w-[11px] sm:h-[11px] rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
           <span>Пензенская область, 20 км <br class="sm:hidden" />от Кузнецка, круглый год!</span>
         </div>
@@ -264,26 +258,26 @@
       <!-- Hero Main Content -->
       <div class="mt-6 sm:mt-8 md:mt-10">
         <div>
-          <h1 class="relative -top-[20px] hero-title-shadow font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] sm:leading-[1.15] mb-16 sm:mb-24 md:mb-32 text-white">
+          <h1 class="site-fade-in relative -top-[20px] hero-title-shadow font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.25] sm:leading-[1.15] mb-16 sm:mb-24 md:mb-32 text-white">
             <span class="block sm:whitespace-nowrap">Комфортный отдых<br class="sm:hidden" /> в бревенчатых домах</span>
             <span class="block sm:whitespace-nowrap mt-0 sm:mt-[10px]">на берегу чистого озера</span>
           </h1>
-          <p class="hero-text-shadow text-base sm:text-xl text-white leading-relaxed max-w-2xl font-medium">
+          <p class="site-fade-in hero-text-shadow text-base sm:text-xl text-white leading-relaxed max-w-2xl font-medium">
             Загородный комплекс «Сосновка» — это песчаный пляж, деревянные коттеджи и бунгало с террасами, беседки на воде, русская баня, сауна с бассейном и домашнее кафе.
           </p>
 
           <div class="mt-11 sm:mt-12 md:mt-14 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-7">
-            <a href="#rooms" class="hero-text-shadow inline-flex items-center justify-center sm:w-60 px-6 py-3.5 rounded-xl bg-stone-950/25 hover:bg-stone-950/45 backdrop-blur-md border border-white/25 text-white font-semibold text-sm transition shadow-md whitespace-nowrap">
+            <a href="#rooms" class="site-fade-in hero-text-shadow inline-flex items-center justify-center sm:w-60 px-6 py-3.5 rounded-xl bg-stone-950/25 hover:bg-stone-950/45 backdrop-blur-md border border-white/25 text-white font-semibold text-sm transition-colors shadow-md whitespace-nowrap">
               Выбрать домик или номер
             </a>
-            <a href="#gazebos" class="hero-text-shadow inline-flex items-center justify-center sm:w-60 px-6 py-3.5 rounded-xl bg-stone-950/25 hover:bg-stone-950/45 backdrop-blur-md border border-white/25 text-white font-semibold text-sm transition shadow-md whitespace-nowrap">
+            <a href="#gazebos" class="site-fade-in hero-text-shadow inline-flex items-center justify-center sm:w-60 px-6 py-3.5 rounded-xl bg-stone-950/25 hover:bg-stone-950/45 backdrop-blur-md border border-white/25 text-white font-semibold text-sm transition-colors shadow-md whitespace-nowrap">
               Аренда беседок у воды
             </a>
           </div>
         </div>
 
         <!-- Key Metrics -->
-        <div id="about" class="scroll-mt-24 sm:scroll-mt-32 mt-11 sm:mt-12 md:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 sm:pt-7 border-t border-white/20">
+        <div id="about" class="site-fade-in scroll-mt-24 sm:scroll-mt-32 mt-11 sm:mt-12 md:mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 sm:pt-7 border-t border-white/20">
         <div>
           <div class="hero-text-shadow text-2xl sm:text-3xl font-bold text-white">до 120</div>
           <div class="hero-text-shadow text-xs sm:text-sm text-stone-100 mt-1">гостей одновременно</div>
@@ -1006,8 +1000,8 @@
   </button>
 
   <!-- Cookie Consent Banner -->
-  <div id="cookieBanner" class="site-fade-in fixed bottom-4 inset-x-4 sm:left-auto sm:right-6 sm:max-w-xl z-50 hidden">
-    <div class="bg-stone-900/95 backdrop-blur-md text-stone-100 p-4 sm:p-5 rounded-2xl shadow-2xl border border-stone-700/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+  <div id="cookieBanner" class="fixed bottom-4 inset-x-4 sm:left-auto sm:right-6 sm:max-w-xl z-50 hidden">
+    <div class="site-fade-in bg-stone-900/95 backdrop-blur-md text-stone-100 p-4 sm:p-5 rounded-2xl shadow-2xl border border-stone-700/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="text-xs leading-relaxed text-stone-300">
         <span>
           Оставаясь на сайте, вы соглашаетесь на сбор и обработку файлов cookie и пользовательских данных в соответствии с ФЗ № 152-ФЗ «О персональных данных», а также принимаете условия
@@ -1337,9 +1331,6 @@
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             document.documentElement.classList.add('site-ready');
-            setTimeout(() => {
-              document.documentElement.classList.add('site-revealed');
-            }, 2050);
           });
         });
       };
